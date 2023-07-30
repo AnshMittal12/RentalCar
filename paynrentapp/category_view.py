@@ -111,6 +111,3 @@ def DisplayCategoryJSON(request):
         print("Error :" ,e)
         return JsonResponse([],safe=False)
     
-
-
-# khcbhdbchjkbsfcvkhbf
