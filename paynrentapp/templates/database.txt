@@ -1,0 +1,33 @@
+Category
+---------
+Categoryid
+Categoryname
+description
+icon
+
+SubCategory
+-----------
+SubCategoryid  Pk
+Categoryid   Fk
+company1name
+SubCategoryname
+description
+icon
+
+Vehicle
+--------
+Vehicleid   Pk
+Categoryid
+SubCategoryid
+modelyear
+variant
+price
+insured (radiobutton)
+registrationno
+ownername
+mobileno
+colour
+fueltype
+no of seats
+transmission type
+picture

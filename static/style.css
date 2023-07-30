@@ -1,0 +1,235 @@
+.Index-maincontainer{
+    background: #f5f6fa;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Index-appbar{
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.Index-slidebox{
+    width: 500px;
+    height: 450px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Index-image_center{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Index-box{
+    width: 400px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: none;
+}
+.Index-centerAlign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Index-boxleft{
+    width: 200px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 0px 0px 0px 10px;
+    border-right: none;
+}
+.Index-boxright{
+    width: 200px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 0px 0px 10px 0px;
+}
+.Index-button_style{
+    width: 400px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 10px;
+    margin-top: 30px;
+    background: linear-gradient(270deg, rgb(28, 171, 162) 25%, rgb(28, 127, 171));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Index-textStyle{
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 24;
+    text-align: left;
+    margin: 2px;
+}
+.Index-datetextstyle{
+    border: none;
+    outline: none;
+    width: 180px;
+    font-weight: bold;
+    font-size: 20;
+    text-align: center;
+}
+.Index-logo1{
+    margin-left: 8%;
+    margin-top: 0.4%;
+}
+.Index-login_signup{
+    margin-left: auto;
+    width: 20%;
+    align-items: center;
+    margin-top: 1%;
+}
+.Index-signup-anker{
+    text-decoration: none;
+    display: flex;
+    color: #000;
+}
+.Index-signup_logo{
+    font-size: 30;
+    margin-right: 5%;
+}
+.Index-login_text{
+    margin-right: 5%;
+    margin-top: 1%;
+} 
+.Index-middle_box{
+    margin-top: 40px;
+}
+.Index-car_heading{
+    font-family: Poppins;
+    font-size: 18;
+    font-weight: 600;
+    padding: 10px;
+}
+.Index-location_logo{
+    width: 10%;
+    color: #778ca3;
+}
+.Index-date{
+    display: flex;
+    flex-direction: row;
+}
+.Index-car_duration{
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 14;
+    font-weight: 600;
+}
+.Index-search{
+    display: flex;
+    align-items: center;
+    font-size: 20;
+    color: #fff;
+    font-weight: bold;
+}
+.Index-decoraters{
+    margin-top: 5%;
+}
+
+.UserVehicleList-maincontainer{
+    background: #dfe6e9;
+    width: 100%;
+    height: 300%;
+    display: flex;
+    flex-direction: column;
+}
+.UserVehicleList-maintab{
+    background: #dfe6e9;
+    width: 100%;
+    height: 200%;
+    display: flex;
+    flex-direction: row;
+}
+.UserVehicleList-appbar{
+    background: #fff;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.UserVehicleList-leftsidebar{
+    background: #fff;
+    width: 27%;
+    height: 300%;
+    margin-top: 1;
+}
+.UserVehicleList-rightbartemplate{
+    background: #fff;
+    width: 22%;
+    /* height: 14%; */
+    margin-top: 3%;
+    margin-left: 2.5%;
+    border-radius: 10%;
+}
+.UserVehicleList-labelstyle{
+    font-family: Poppins;
+    font-size: 16;
+    font-weight: bold;
+    margin-top: 6%;
+    display: flex;
+    margin-left: 25%;
+}
+.UserVehicleList-checkstyle{
+    font-family: Poppins;
+    font-size: 14;
+    margin-top: 1%;
+    display: flex;
+    margin-left: 25%;
+}
+.UserVehicleList-button_style{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #778ca3;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-left: 2%;
+    background: linear-gradient(270deg, rgb(28, 171, 162) 25%, rgb(28, 127, 171));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.UserVehicleList-boxleft{
+    width: 170px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 10px 0px 0px 10px;
+    border-right: none;
+}
+.UserVehicleList-middlebox{
+    width: 170px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 0px 0px 0px 0px;
+}
+.UserVehicleList-boxright{
+    width: 170px;
+    height: 50px;
+    border: 1px solid #778ca3;
+    border-radius: 0px 10px 10px 0px;
+    border-left: none;
+}
+.UserVehicleList-textStyle{
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 17;
+    text-align: left;
+    margin-left: 2%;
+    width: 80%;
+}

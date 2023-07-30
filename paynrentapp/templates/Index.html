@@ -1,0 +1,203 @@
+<style>
+    /* .maincontainer{
+        background: #f5f6fa;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+    /* .appbar{
+        background: #fff;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    } */
+    /* .slidebox{
+        width: 500px;
+        height: 450px;
+        background: #fff;
+        border-radius: 10px;
+        margin: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    } */
+    /* .image_center{
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    /* .box{
+        width: 400px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: none;
+    } */
+    /* .centerAlign{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    /* .boxleft{
+        width: 200px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 0px 0px 0px 10px;
+        border-right: none;
+    } */
+    /* .boxright{
+        width: 200px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 0px 0px 10px 0px;
+    } */
+    /* .button_style{
+        width: 400px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 10px;
+        margin-top: 30px;
+        background: linear-gradient(270deg, rgb(28, 171, 162) 25%, rgb(28, 127, 171));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    /* .textStyle{
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 24;
+        text-align: left;
+        margin: 2px;
+    } */
+    /* .datetextstyle{
+        border: none;
+        outline: none;
+        width: 180px;
+        font-weight: bold;
+        font-size: 20;
+        text-align: center;
+    } */
+</style>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"/>
+        <!-- datetimepicker jQuery CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="/static/style.css" />
+        <script>
+            $(document).ready(function(){
+                $('.city').click(function(){
+                    $('#dcity').val($(this).attr('scity'))
+                    $('#car_heading').html(`Car rental in ${$(this).attr('scity')}`)
+                });
+                $(".datetimepicker").each(function(){
+                    $(this).datetimepicker();
+                });
+                $('#end_date').change(function(){
+                    const date1 = new Date($('#start_date').val());
+                    const date2 = new Date($('#end_date').val());
+                    const diffTime = Math.abs(date2 - date1);
+                    S=parseInt(diffTime/1000)
+                    M=parseInt(S/60)
+                    H=parseInt(M/60)
+                    D=parseInt(H/24)
+                    H=H%24
+                    const diffDays = parseInt(diffTime / (1000*60*60*24))
+                    $('#car_time').html("Duration: "+diffDays+" Days and  "+H+" Hours");
+                    $('#dh').val(diffDays+":"+H);
+                })
+                $('#btn').click(function(){
+                    $.getJSON('http://localhost:8000/api/showvehiclelist',{city:$('#dcity').val(),start_date:$('#start_date').val(),end_date:$('#end_date').val(),dh:$('#dh').val()},function(data){
+                        window.location.href="http://localhost:8000/api/uservehiclelist"
+                    })
+                    
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="Index-maincontainer">
+            <div class="Index-appbar">
+                <img src="/static/Logo1.png" width="48" height="40" class="Index-logo1">
+                <div class="Index-login_signup">
+                    <a href="http://localhost:8000/api/agencyloginpage" class="Index-signup-anker">
+                    <i  class="fa-solid fa-right-to-bracket Index-signup_logo"></i>
+                    <span class="Index-login_text">Login & SignUp</span></a>
+                </div> 
+            </div>
+            <div class="row Index-middle_box">
+                <div class="col-md-6">
+                    <div class="Index-slidebox">
+                        <img src="/static/heading_leftbox.png" width="80%">
+                        <img src="/static/rentals.png" width="25%">
+                        <div id="car_heading" class="Index-car_heading">Self drive cars in India</div>
+                        <div>
+                            <div class="Index-box Index-centerAlign" data-toggle="modal" data-target="#myModal">
+                                <i class="fa-solid fa-location-dot fa-xl Index-location_logo"></i>
+                                <input class="Index-textStyle" type="text" id="dcity" placeholder="Select City...">                               
+                            </div>
+                            <div class="Index-date">
+                                <div class="Index-boxleft Index-centerAlign">
+                                    <input type="text" id="start_date" class="datetimepicker Index-datetextstyle" placeholder="Start Date">
+                                </div>
+                                <div class="Index-boxright Index-centerAlign">
+                                    <input type="text" id="end_date" class="datetimepicker Index-datetextstyle" placeholder="End Date">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="dh"/>
+                        <div id="car_time" class="Index-car_duration"></div>
+                        <div id="btn" class="Index-button_style">
+                            <div class="Index-search">Search ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="Index-image_center">
+                        <img class="Index-decoraters" src="/static/Home_1_img.webp" width="80%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+      
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Select City</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+        
+                <!-- Modal body -->
+                <div class="modal-body" class="close" data-dismiss="modal">
+                    <h4 class="city" scity="New Delhi">New Delhi</h4>
+                    <h4 class="city" scity="Gwalior">Gwalior</h4>
+                    <h4 class="city" scity="Pune">Pune</h4>
+                    <h4 class="city" scity="Indore">Indore</h4>
+                    <h4 class="city" scity="Noida">Noida</h4>    
+                </div>  
+            </div>
+        </div>
+    </body>
+</html>
