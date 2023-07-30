@@ -110,3 +110,7 @@ def DisplayCategoryJSON(request):
     except Exception as e:
         print("Error :" ,e)
         return JsonResponse([],safe=False)
+    
+
+
+# khcbhdbchjkbsfcvkhbf
